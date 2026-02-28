@@ -39,6 +39,8 @@ TIMEZONE = pytz.timezone("Asia/Kolkata")
 
 def get_sheet():
     creds_dict = json.loads(GOOGLE_CREDS)
+    creds_dict["private_key"] = creds_dict["private_key"].replace("\\n", "\n")
+
 
     scope = [
         "https://spreadsheets.google.com/feeds",
